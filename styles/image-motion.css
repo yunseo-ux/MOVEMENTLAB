@@ -1,0 +1,25 @@
+/* The outer slot stays fixed; all image movement happens within its bounds. */
+.image-motion-frame { display: block; position: relative; overflow: hidden; }
+.image-motion-plane { display: block; width: 100%; }
+.image-motion-image { display: block; width: 100%; max-width: 100%; height: auto; }
+.image-motion-enabled .image-motion-plane {
+  transform: translate3d(0, var(--image-offset, 0px), 0) scale(1.06);
+  transition: transform 220ms ease-out;
+}
+.image-motion-enabled .image-motion-image {
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity var(--motion-reveal-duration) var(--motion-ease), transform 500ms var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms), 0ms;
+}
+.image-motion-enabled .is-image-idle .image-motion-image {
+  transform: scale(1.04);
+  transition-duration: var(--motion-reveal-duration), 2800ms;
+}
+@media (max-width: 767px) {
+  .image-motion-enabled .image-motion-plane { transform: scale(1.025); }
+  .image-motion-enabled .is-image-idle .image-motion-image { transform: scale(1.025); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .image-motion-plane, .image-motion-image { transform: none !important; transition: none !important; }
+}

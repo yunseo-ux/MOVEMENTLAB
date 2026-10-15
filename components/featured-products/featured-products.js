@@ -1,0 +1,6 @@
+import { image } from '../../scripts/utils.js';
+import { productCard } from '../product-card/product-card.js';
+export function featuredProducts(){return `<section class="featured-products" aria-label="추천 제품 이야기" data-node-id="517:2130">
+  <article class="featured-product"><button class="featured-scene" type="button" data-detail="Petalo Chair" data-image="ImgImage21" aria-label="Petalo Chair 공간 이미지와 상품 미리보기">${image('ImgImage21','페탈로 체어가 놓인 밝은 다이닝 공간')}</button><div class="featured-sidebar"><div class="featured-sidebar-inner"><p>페탈로 체어는 인체의 자연스러운 곡선을 따라 디자인되어, 부드럽게 형태를 잡은 시트가 몸을 안정적으로 받쳐주며 편안한 착석감을 제공합니다. 각도 조절이 가능한 글라이드는 안정감을 더해 다양한 공간에서도 편안하고 안정적으로 사용할 수 있습니다.</p>${productCard('Petalo Chair','ImgImage22',true)}</div></div></article>
+  <article class="featured-product"><button class="featured-scene" type="button" data-detail="Pebble Sofa - Fabric" data-image="ImgImage23" aria-label="Pebble Sofa 공간 이미지와 상품 미리보기">${image('ImgImage23','정원과 연결된 공간의 페블 패브릭 소파')}</button><div class="featured-sidebar"><div class="featured-sidebar-inner"><p>페블 소파는 매끄러운 조약돌에서 영감을 받아, 부드럽게 흐르는 곡선과 둥근 실루엣을 담아낸 디자인입니다. 미니멀한 형태가 공간에 따뜻하고 세련된 분위기를 더하며, 아늑하면서도 감각적인 포인트가 되어줍니다.</p>${productCard('Pebble Sofa - Fabric','ImgImage24',true)}</div></div></article>
+</section>`;}

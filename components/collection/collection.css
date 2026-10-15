@@ -1,0 +1,36 @@
+.collection{padding:10.989583vw var(--page-gutter) 11.510417vw}
+.collection-feature{position:relative;display:grid;grid-template-columns:840fr 920fr;column-gap:4.166667vw;align-items:start}
+.collection-copy{display:flex;flex-direction:column;min-height:50.78125vw}
+.collection-brand{font-family:'Pretendard',sans-serif;font-size:.78125vw;line-height:1.2;margin-left:.520833vw}
+.collection-copy h2{font-size:4.166667vw;line-height:1;margin:2.8125vw 0 0 .677083vw;white-space:nowrap}
+.collection-description{margin-top:auto;font-size:.885417vw;line-height:1.4}
+.collection-description p{white-space:nowrap}
+.collection-description .more-link{width:48.586957%;min-height:2.34375vw;font-size:.729167vw;font-weight:300;padding:.520833vw;margin-top:2.135417vw}
+.collection-detail{position:absolute;right:0;top:0;width:15.48913%}
+.collection-caption{text-align:right;margin-top:9.84375vw}
+.collection-caption h3{position:relative;height:10.416667vw;font-size:5.208333vw;line-height:1;letter-spacing:0}
+.caption-line{position:absolute;white-space:nowrap}
+.caption-line--first{left:49.184783%;top:0}
+.caption-line--second{left:22.336957%;top:5.208333vw}
+.collection-caption .accent{position:absolute;font-size:3.90625vw;line-height:1.2}
+.caption-a{left:63.043478%;top:.520833vw}
+.caption-n{left:36.684783%;top:5.729167vw}
+.caption-r{left:83.478261%;top:5.625vw}
+.collection-caption p{font-size:.9375vw;line-height:1.4;margin-top:1.041667vw}
+.collection-collage{margin-top:4.6875vw;display:grid;grid-template-columns:445fr 910fr 445fr;gap:1.041667vw;align-items:end}
+.collection-collage>div:last-child{align-self:start}
+@media(max-width:767px){
+  .collection{padding-block:80px}.collection-feature{grid-template-columns:1.2fr 1fr;gap:20px}
+  .collection-copy{min-height:0}.collection-brand{font-size:10px;margin:0 0 18px}
+  .collection-copy h2{font-size:6.2vw;margin:0}
+  .collection-description{font-size:12px;margin-top:30px}.collection-description p{white-space:normal;word-break:keep-all}
+  .collection-description .more-link{width:100%;font-size:12px;min-height:45px;margin-top:20px;padding:10px}
+  .collection-detail{position:static;width:50%;margin-top:-10px}
+  .collection-caption{margin-top:45px;container-type:inline-size}
+  .collection-caption h3{font-size:5.434783cqw;height:10.869565cqw}
+  .caption-line--second{top:5.434783cqw}
+  .collection-caption .accent{font-size:4.076087cqw}
+  .caption-a{top:.543478cqw}.caption-n{top:5.978261cqw}.caption-r{top:5.869565cqw}
+  .collection-caption p{font-size:12px;margin-top:20px;word-break:keep-all}
+  .collection-collage{gap:8px;margin-top:32px;grid-template-columns:1fr 2fr 1fr}
+}

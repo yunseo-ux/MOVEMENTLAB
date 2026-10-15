@@ -1,0 +1,33 @@
+/* Figma 1920px coordinates; the header occupies the first 70px. */
+.headline-stage{position:relative;height:calc(43.958333vw - 70px)}
+.hero-heading{font-size:8.854167vw;font-style:italic;line-height:1;letter-spacing:0}
+.hero-fragment{position:absolute;white-space:nowrap}
+.hero-disc{left:2.1875%;top:calc(6.09375vw - 70px)}
+.hero-ve{left:24.479167%;top:calc(6.09375vw - 70px)}
+.hero-exper{left:15.208333%;top:calc(13.90625vw - 70px)}
+.hero-ence{left:44.53125%;top:calc(13.90625vw - 70px)}
+.hero-live{left:32.708333%;top:calc(21.822917vw - 70px)}
+.hero-moves{left:52.65625%;top:calc(29.479167vw - 70px)}
+.accent{font-family:var(--font-accent);font-style:normal;font-weight:400;letter-spacing:0}
+.hero-heading .accent{font-size:6.510417vw;line-height:1.2}
+.hero-o{left:19.270833%;top:calc(7.135417vw - 70px)}
+.hero-r{left:33.489583%;top:calc(7.135417vw - 70px)}
+.hero-i{left:39.010417%;top:calc(14.947917vw - 70px)}
+.hero-you{left:80%;top:calc(30vw - 70px)}
+.hero-signature{position:absolute;right:2.34375%;top:calc(37.916667vw - 70px);font-size:1.041667vw;line-height:1.5}
+.brand-intro{width:47.135417%;margin-left:50.78125%}
+.intro-statement{text-align:right;font-size:3.333333vw;line-height:1;letter-spacing:0;white-space:nowrap;margin-top:2.552083vw}
+.intro-copy{margin-top:3.125vw}
+.intro-copy p{font-size:.885417vw;line-height:1.5;white-space:nowrap}
+.intro-copy .more-link{width:49.392265%;margin-top:2.135417vw;min-height:2.34375vw;font-size:.729167vw;font-weight:300;padding:.520833vw;border-color:#5e5e5e}
+@media(max-width:767px){
+  .headline-stage{height:42vw;margin-top:24px}
+  .hero-disc,.hero-ve{top:0}.hero-exper,.hero-ence{top:7.8125vw}.hero-live{top:15.729167vw}.hero-moves{top:23.385417vw}
+  .hero-o,.hero-r{top:1.041667vw}.hero-i{top:8.854167vw}.hero-you{top:23.90625vw}
+  .hero-signature{top:34vw;font-size:9px;right:20px}
+  .brand-intro{width:calc(83% - 20px);margin:16px 20px 0 auto}
+  .intro-statement{font-size:4.45vw;margin-top:24px}
+  .intro-copy{margin-top:28px}.intro-copy p{font-size:13px;white-space:normal;word-break:keep-all}
+  .desktop-break{display:none}
+  .intro-copy .more-link{width:100%;font-size:12px;min-height:45px;margin-top:24px;padding:10px}
+}

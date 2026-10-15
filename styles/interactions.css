@@ -1,0 +1,91 @@
+:root {
+  --motion-ease: cubic-bezier(.16, 1, .3, 1);
+  --motion-reveal-duration: 950ms;
+}
+
+/* The header remains in document flow, preserving the measured Figma coordinates. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: transform 450ms var(--motion-ease), background-color 300ms, box-shadow 300ms;
+}
+.site-header.is-scrolled {
+  background: rgba(244, 243, 241, .95);
+  box-shadow: 0 1px 0 rgba(64, 47, 37, .12);
+  backdrop-filter: blur(12px);
+}
+.site-header.header-hidden { transform: translateY(-105%); }
+.site-header:focus-within { transform: none; }
+
+/* Scroll entrances are progressive enhancement; content is visible without JS. */
+.motion-ready [data-reveal] {
+  transition: opacity var(--motion-reveal-duration) var(--motion-ease),
+    transform var(--motion-reveal-duration) var(--motion-ease),
+    clip-path 1200ms var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.motion-ready [data-reveal]:not(.is-revealed) { opacity: 0; }
+.motion-ready [data-reveal="rise"]:not(.is-revealed) { transform: translate3d(0, 26px, 0); }
+.motion-ready [data-reveal="image"] { transition-property: opacity; }
+.motion-ready .showcase-image { transform: translate3d(0, var(--parallax-y, 0px), 0); }
+
+.motion-label { position: relative; display: inline-block; overflow: hidden; vertical-align: bottom; line-height: 1.4; }
+.motion-label-main, .motion-label-copy { display: block; white-space: nowrap; }
+.motion-label-copy { position: absolute; top: 0; left: 0; }
+.motion-label-main > span, .motion-label-copy > span {
+  display: inline-block;
+  transition: transform 500ms var(--motion-ease);
+  transition-delay: var(--letter-delay);
+}
+.motion-label-copy > span { transform: translateY(110%); }
+.card-link .arrow { transition: transform 450ms var(--motion-ease); }
+.main-nav a:hover { text-decoration: none; }
+.utility-nav button:hover { text-decoration: none; }
+
+.product-rail { cursor: grab; touch-action: pan-x pan-y; }
+.product-rail.is-dragging { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; user-select: none; }
+.product-rail img { -webkit-user-drag: none; }
+.product-rail .card-link { cursor: pointer; }
+.drag-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(64, 47, 37, .3);
+  border-radius: 50%;
+  background: rgba(244, 243, 241, .9);
+  color: var(--color-brown);
+  font-size: 10px;
+  letter-spacing: .14em;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(var(--cursor-x, -100px), var(--cursor-y, -100px), 0) translate(-50%, -50%);
+  transition: opacity 180ms;
+}
+.drag-cursor.is-visible:not(.over-control) { opacity: 1; }
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  a:hover .motion-label-main > span, button:hover .motion-label-main > span,
+  a:focus-visible .motion-label-main > span, button:focus-visible .motion-label-main > span { transform: translateY(-110%); }
+  a:hover .motion-label-copy > span, button:hover .motion-label-copy > span,
+  a:focus-visible .motion-label-copy > span, button:focus-visible .motion-label-copy > span { transform: translateY(0); }
+  .card-link:hover .arrow { transform: translateX(5px); }
+}
+@media (max-width: 767px) {
+  .motion-ready [data-reveal="rise"]:not(.is-revealed) { transform: translate3d(0, 16px, 0); }
+  .drag-cursor { display: none; }
+  .motion-ready .showcase-image { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header.header-hidden { transform: none; }
+  .motion-ready [data-reveal] { opacity: 1; transform: none; clip-path: none; }
+  .motion-ready .showcase-image { transform: none; }
+  .motion-label-main > span { transform: none !important; }
+  .motion-label-copy { display: none; }
+  .drag-cursor { display: none; }
+}

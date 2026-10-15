@@ -1,0 +1,3 @@
+import { image } from '../../scripts/utils.js';
+const projects=[['ImgImage18','유원재 호텔','충주시 수안보면','유원재 호텔'],['ImgImage19','파크하얏트 부산 디플로매트 객실','부산 해운대구','PARK HYATT BUSAN'],['ImgImage20','한옥에세이 가회','서울시 종로구','Z_Lab']];
+export function portfolio(){return `<section class="portfolio" id="portfolio" aria-label="공간 프로젝트 포트폴리오" data-node-id="517:2087"><p class="portfolio-intro">무브먼트랩의 포트폴리오는 고유한 디자인 관점으로 완성한 다양한 공간 프로젝트를 선보입니다.<br>각 프로젝트는 가구와 오브제, 소재가 조화롭게 어우러져 세련되고 완성도 높은 공간 경험을 만들어냅니다.</p><div class="portfolio-grid">${projects.map(([asset,title,location,client])=>`<article>${image(asset,title)}<h3>${title}</h3><p>Location. ${location}<br>Client. ${client}</p></article>`).join('')}</div></section>`;}

@@ -1,0 +1,11 @@
+.brands{padding:4.6875vw var(--page-gutter)}.brands-heading{width:54%;margin-left:auto}.brands-heading h2{font-size:5.208333vw;text-align:right;letter-spacing:-.035em}.brands-heading>p{font-size:.9375vw;width:74%;margin:1.875vw 0 4.6875vw 10%;line-height:1.4}.brands-body{display:grid;grid-template-columns:835fr 899fr;gap:4.947917vw;align-items:start}.brands-body>div>.more-link{width:30%;margin:4.635417vw 0 0 auto}.brand-list{border-top:1.5px solid var(--color-brown)}.brand-row{display:grid;width:100%;grid-template-columns:45px 1fr 30px;gap:10px;align-items:center;text-align:left;padding:.85vw 14px .85vw 10px;background:transparent;border:0;border-bottom:1px solid var(--color-brown);color:var(--color-muted);min-height:5.78125vw;transition:color var(--duration)}.brand-index{font-size:10px;align-self:start;padding-top:8px}.brand-name{font-size:2.34375vw}.brand-description{grid-column:2/4;font-size:.78125vw}.brand-arrow{opacity:0}.brand-row.is-active,.brand-row:hover{color:var(--color-brown)}.brand-row.is-active .brand-arrow,.brand-row:hover .brand-arrow{opacity:1}
+.brands-heading h2{font-size:4.7vw}
+.brand-visual{position:relative;aspect-ratio:835/800;overflow:hidden}
+.brand-visual-image{position:absolute;inset:0;width:100%;height:auto;opacity:0;transition:opacity 450ms var(--motion-ease);pointer-events:none}
+.brand-visual-image.is-active{opacity:1;z-index:1}
+.brand-list{border-top:.5px solid var(--color-border)}
+.brand-row{position:relative;border-bottom:.5px solid var(--color-border)}
+.brand-row.is-active{border-bottom-color:var(--color-brown)}
+.brand-row.is-active::before{content:'';position:absolute;top:-1px;inset-inline:0;height:1px;background:var(--color-brown);pointer-events:none}
+@media(prefers-reduced-motion:reduce){.brand-visual-image{transition:none}}
+@media(max-width:767px){.brands{padding:40px 20px 60px}.brands-heading{width:100%}.brands-heading h2{font-size:7.5vw}.brands-heading>p{font-size:13px;width:100%;margin:24px 0 36px}.brands-heading>p br{display:none}.brands-body{grid-template-columns:1fr;gap:32px}.brands-body>.asset{width:75%}.brand-row{grid-template-columns:30px 1fr 26px;padding:16px 4px;gap:8px;min-height:90px}.brand-name{font-size:28px}.brand-description{font-size:12px}.brands-body>div>.more-link{width:200px;margin-top:30px}}

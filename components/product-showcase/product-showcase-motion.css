@@ -1,0 +1,45 @@
+/* A new product panel rises over the previous panel after all of it can be read. */
+#shop.showcase-stack { position: relative; isolation: isolate; container-type: inline-size; }
+.product-showcase::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #1c1713;
+  opacity: var(--cover-shade, 0);
+  pointer-events: none;
+}
+.motion-ready [data-reveal="showcase-image"] {
+  transform: scale(1);
+  transform-origin: center;
+  transition: opacity 1000ms var(--motion-ease), transform 500ms var(--motion-ease);
+  transition-delay: var(--reveal-delay, 0ms), 0ms;
+}
+.showcase-image { overflow: hidden; }
+.motion-ready .is-scroll-resting [data-reveal="showcase-image"] {
+  transform: scale(1.06);
+  transition-duration: 1000ms, 2400ms;
+}
+.motion-ready [data-reveal="showcase-image"]:not(.is-revealed) {
+  opacity: 0;
+}
+.motion-ready [data-reveal="showcase-image"].is-revealed {
+  opacity: 1;
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .showcase-stack > .product-showcase {
+    position: sticky;
+    /* A tall panel scrolls to its bottom before sticking, preserving every image. */
+    top: min(0px, calc(100svh - 72.395833cqw));
+    z-index: var(--panel-index);
+  }
+}
+@media (max-width: 767px) {
+  .product-showcase::after { display: none; }
+  .motion-ready .is-scroll-resting [data-reveal="showcase-image"] { transform: scale(1.035); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-showcase::after { display: none; }
+  [data-showcase-step] { opacity: 1; transform: none; clip-path: none; }
+  .motion-ready .is-scroll-resting [data-reveal="showcase-image"] { transform: none; }
+}
